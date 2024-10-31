@@ -1,23 +1,23 @@
 {
   "name": "zotero-plugin-template",
-  "version": "3.0.1",
-  "description": "Zotero Plugin Template",
+  "version": "0.1.0",
+  "description": "Zotero Excerpt",
   "config": {
-    "addonName": "Zotero Plugin Template",
-    "addonID": "addontemplate@euclpts.com",
-    "addonRef": "addontemplate",
-    "addonInstance": "AddonTemplate",
-    "prefsPrefix": "extensions.zotero.addontemplate"
+    "addonName": "Zotero Excerpt",
+    "addonID": "ZoteroExcerpt@fanyingfx.com",
+    "addonRef": "ZoteroExcerpt",
+    "addonInstance": "ZoteroExcerpt",
+    "prefsPrefix": "extensions.zotero.zoteroExcerpt"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/windingwind/zotero-plugin-template.git"
+    "url": "git+https://github.com/fanyingfx/zotero-excerpt.git"
   },
-  "author": "windingwind",
+  "author": "fanyingfx",
   "bugs": {
-    "url": "https://github.com/windingwind/zotero-plugin-template/issues"
+    "url": "https://github.com/fanyingfx/zotero-excerpt/issues"
   },
-  "homepage": "https://github.com/windingwind/zotero-plugin-template#readme",
+  "homepage": "https://github.com/fanyingfx/zotero-excerpt",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "zotero-plugin serve",
@@ -28,7 +28,7 @@
     "update-deps": "npm update --save"
   },
   "dependencies": {
-    "zotero-plugin-toolkit": "^4.0.6"
+    "zotero-plugin-toolkit": "^4.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
