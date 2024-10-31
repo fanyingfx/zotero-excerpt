@@ -1,6 +1,6 @@
 {
   "name": "zotero-plugin-template",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Zotero Excerpt",
   "config": {
     "addonName": "Zotero Excerpt",
