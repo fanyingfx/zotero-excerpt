@@ -171,16 +171,43 @@ export function buildReaderPopup(
             {
               type: "click",
               listener: async (event) => {
-                const formData = new URLSearchParams();
-                formData.append("sentence", annotation.text);
-                formData.append("descriptions", title);
-                fetch("http://127.0.0.1:5000/submit", {
-                  method: "POST",
-                  body: formData,
-                  headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                  },
-                });
+                const button = event.target as HTMLButtonElement;
+                try {
+                  const payload = {
+                    sentence: annotation.text,
+                    descriptions: title,
+                  };
+
+                  const response = await fetch(
+                    "http://127.0.0.1:5000/sentence/submit",
+                    {
+                      method: "POST",
+                      body: JSON.stringify(payload),
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                    },
+                  );
+
+                  if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+
+                  const result = await response.json();
+                  button.style.backgroundColor = "#4caf50";
+                  button.innerHTML = "Saved";
+                  ztoolkit.log("Data sent successfully:", result);
+                } catch (error) {
+                  button.style.backgroundColor = "#f44336";
+                  button.innerHTML = "Error!";
+                  ztoolkit.log("Error sending data:", error);
+                } finally {
+                  setTimeout(() => {
+                    button.style.backgroundColor = "";
+                    button.innerHTML = "Save Sentence";
+                    button.disabled = false;
+                  }, 2000);
+                }
               },
             },
           ],
