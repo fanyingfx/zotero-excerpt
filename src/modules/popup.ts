@@ -118,39 +118,39 @@ export function buildReaderPopup(
   append(
     ztoolkit.UI.createElement(doc, "fragment", {
       children: [
-        {
-          tag: "textarea",
-          id: makeId("text"),
-          attributes: {
-            // rows: "3",
-            // columns: "10",
-          },
-          classList: [
-            `${config.addonRef}-popup-textarea`,
-            `${config.addonRef}-readerpopup`,
-          ],
-          styles: {
-            fontSize: `${getPref("fontSize")}px`,
-            fontFamily: "inherit",
-            lineHeight: `${
-              Number(getPref("lineHeight")) * Number(getPref("fontSize"))
-            }px`,
-            width: "300px",
-            // width: keepSize ? `${getPref("popupWidth")}px` : "-moz-available",
-            // height: `${Math.max(
-            //   keepSize ? Number(getPref("popupHeight")) : 30,
-            // )}px`,
-            height: "150px",
-            marginLeft: "2px",
-          },
-          properties: {
-            onpointerup: (e: Event) => e.stopPropagation(),
-            ondragstart: (e: Event) => e.stopPropagation(),
-            spellcheck: false,
-            value: addon.data.selectedText,
-          },
-          ignoreIfExists: true,
-        },
+        // {
+        //   tag: "textarea",
+        //   id: makeId("text"),
+        //   attributes: {
+        //     // rows: "3",
+        //     // columns: "10",
+        //   },
+        //   classList: [
+        //     `${config.addonRef}-popup-textarea`,
+        //     `${config.addonRef}-readerpopup`,
+        //   ],
+        //   styles: {
+        //     fontSize: `${getPref("fontSize")}px`,
+        //     fontFamily: "inherit",
+        //     lineHeight: `${
+        //       Number(getPref("lineHeight")) * Number(getPref("fontSize"))
+        //     }px`,
+        //     width: "300px",
+        //     // width: keepSize ? `${getPref("popupWidth")}px` : "-moz-available",
+        //     // height: `${Math.max(
+        //     //   keepSize ? Number(getPref("popupHeight")) : 30,
+        //     // )}px`,
+        //     height: "150px",
+        //     marginLeft: "2px",
+        //   },
+        //   properties: {
+        //     onpointerup: (e: Event) => e.stopPropagation(),
+        //     ondragstart: (e: Event) => e.stopPropagation(),
+        //     spellcheck: false,
+        //     value: addon.data.selectedText,
+        //   },
+        //   ignoreIfExists: true,
+        // },
         {
           tag: "button",
           namespace: "html",
